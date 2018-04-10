@@ -1,4 +1,7 @@
 <?php 
+
+require 'classes/Database.php';
+
 	class Polica {
 		private $id = 0;
 		private $seria = 0;
@@ -66,6 +69,37 @@
 
 			echo($diff->format("%a"));
 			}
+		}
+
+		public function vendosDatenShitjes($data_shitjes)
+		{
+			$this->data_shitjes = $data_shitjes;
+		}
+
+		public function merrDatenShitjes()
+		{
+			return $this->data_shitjes;
+		}
+
+
+
+
+		// Funksioni per ruajtjen ne databaze
+		public function ruajPolicen() 
+		{
+			$db = new Database();
+			$db = $db->dbKonekcioni();
+
+			$sql = "INSERT INTO `ledger`(`EntryDate`, `EntryType`, `Value`, `RegisteredBy`) VALUES ('2018-01-03','Expense',22.7,'Pito Axiu')";
+
+				if ($db->query($sql) === TRUE) {
+				    echo "New record created successfully";
+				} else {
+				    echo "Error: " . $sql . "<br>" . $db->error;
+				}
+
+				$db->close();
+
 		}
 	}
 
