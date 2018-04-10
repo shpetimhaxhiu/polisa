@@ -54,13 +54,17 @@
 
 		public function ditetValide($data_prej, $data_deri)
 		{
-			$dataPrej = strtotime($data_prej);
-			$dataDeri = strtotime($data_deri);
+			$dataPrej = date_create($data_prej);
+			$dataDeri = date_create($data_deri);
 
+			if($dataPrej > $dataDeri) {
+				return '-1';
+			} elseif($dataPrej == $dataDeri) {
+				return '1';
+			} else {
+			$diff = date_diff($dataPrej, $dataDeri);
 
-
-			if($dataPrej < $dataDeri) {
-				return $dataDeri - $dataPrej / ;
+			echo($diff->format("%a"));
 			}
 		}
 	}

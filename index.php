@@ -8,6 +8,8 @@
 	
 </body>
 </html>
+
+
 <?php 
 require 'classes/Polica.php';
 
@@ -41,9 +43,10 @@ $polica->vendosDatenDeri('2019-12-31');
 echo 'IDPOL: ', $polica->merrIdPolices(), '<br>';
 echo 'merrDatenPrej: ', $polica->merrDatenPrej(), ' - ',$polica->merrDatenDeri(),  '<br>';
 echo 'merrNumrinSerik: ', $polica->merrNumrinSerik(), '<br>';
-echo $polica->ditetValide('2018-03-31', '2018-03-01');
+echo 'TEST:', $polica->ditetValide('2018-03-10', '2018-03-10'), 'TEST<br>';
 
-echo '<pre>';
-echo $polica->ditetValide('2018-03-01', '2018-03-31');
+// echo $polica->ditetValide('2018-03-31', '2018-03-31');
+// echo '<pre>';
+// echo $polica->ditetValide('2018-03-01', '2018-03-31');
 
 ?>
