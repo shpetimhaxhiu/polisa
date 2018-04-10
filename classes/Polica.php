@@ -85,7 +85,7 @@ require 'classes/Database.php';
 
 
 		// Funksioni per ruajtjen ne databaze
-		public function ruajPolicen() 
+		public function shtoPolicen() 
 		{
 			$db = new Database();
 			$db = $db->dbKonekcioni();
@@ -101,6 +101,32 @@ require 'classes/Database.php';
 				$db->close();
 
 		}
+
+
+		public function ruajPolicen($idPolices) 
+		{
+
+			$db = new Database();
+			$db = $db->dbKonekcioni();
+
+			$sql = "UPDATE `ledger` set `EntryDate`='2018-03-01', `EntryType`='Income' `Value`=99.99, `RegisteredBy` = 'PitoAxiu2')";
+
+				if ($db->query($sql) === TRUE) {
+				    echo "New record created successfully";
+				} else {
+				    echo "Error: " . $sql . "<br>" . $db->error;
+				}
+
+			$db->close();
+
+		}
+
+		// public function bar()
+		// {
+		// 	if ( func_num_args() > 0 ){
+		//         var_dump(func_get_args());
+		//     }
+		// }
 	}
 
  ?>

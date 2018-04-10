@@ -51,6 +51,7 @@ echo 'TEST:', $polica->ditetValide('2018-03-10', '2018-03-10'), 'TEST<br>';
 // echo '<pre>';
 // echo $polica->ditetValide('2018-03-01', '2018-03-31');
 
-$polica->ruajPolicen();
+$polica->shtoPolicen(); 
+// $polica->bar(1,2,3,4, 5,6,7,'Test', 13.10, 'Test2', '2018-03-02');
 
 ?>
